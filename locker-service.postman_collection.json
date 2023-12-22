@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "6b07cc31-0f89-4d39-9a2f-a1d65c16e437",
+		"name": "locker-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6463769"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ktpNumber\" : \"12326666\",\r\n    \"phoneNumber\" : \"083723\",\r\n    \"email\" : \"djasjdasdkajs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/locker-service/register"
+			},
+			"response": []
+		},
+		{
+			"name": "book-locker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"1\",\r\n    \"qtyLocker\" : \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/locker-service/book-locker"
+			},
+			"response": []
+		},
+		{
+			"name": "generate-password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingIds\" : [11,12,13]\r\n}"
+				},
+				"url": "http://localhost:8080/locker-service/generate-password"
+			},
+			"response": []
+		},
+		{
+			"name": "return-locker",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingIds\" : [11]\r\n}"
+				},
+				"url": "http://localhost:8080/locker-service/return-locker"
+			},
+			"response": []
+		},
+		{
+			"name": "access-locker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingId\": 1,\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/locker-service/access-locker"
+			},
+			"response": []
+		}
+	]
+}
